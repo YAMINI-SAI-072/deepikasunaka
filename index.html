@@ -6,36 +6,30 @@
   <title>Student Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .button-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      margin: 20px 0;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    .button-nav button {
-      padding: 10px 20px;
-      border: none;
-      background-color: #005f73;
+
+    body {
+      background-color: #e0f2f1;
+      color: #212529;
+      line-height: 1.6;
+    }
+
+    .header {
+      background-color: #007f91;
       color: white;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s;
+      padding: 40px 0;
+      border-bottom: 4px solid #023e3e;
     }
-    .button-nav button:hover {
-      background-color: #0a9396;
-    }
-    .section {
-      margin: 40px 20px;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      background-color: #f8f9fa;
-    }
+
     header .container {
       text-align: center;
     }
+
     .profile-photo {
       display: block;
       width: 150px;
@@ -43,7 +37,109 @@
       border-radius: 50%;
       object-fit: cover;
       margin: 20px auto;
-      border: 3px solid #005f73;
+      border: 4px solid #fff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      margin-top: 10px;
+      font-size: 2.5rem;
+    }
+
+    .button-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .button-nav button {
+      padding: 10px 25px;
+      border: none;
+      background-color: #005f73;
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .button-nav button:hover {
+      background-color: #0a9396;
+      transform: scale(1.05);
+    }
+
+    .section {
+      margin: 40px auto;
+      padding: 30px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      background-color: #ffffff;
+      width: 90%;
+      max-width: 900px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #005f73;
+      border-bottom: 2px solid #0a9396;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: disc inside;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #005f73;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .skills-list li {
+      background-color: #d8f3dc;
+      padding: 8px 12px;
+      border-radius: 8px;
+      text-align: center;
+      color: #034b53;
+      font-weight: bold;
+    }
+
+    footer.footer {
+      background-color: #007f91;
+      text-align: center;
+      padding: 20px;
+      color: white;
+      margin-top: 40px;
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .button-nav {
+        flex-direction: column;
+      }
+
+      .skills-list {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -52,7 +148,7 @@
     <div class="container">
       <img src="project.jpg" alt="Profile Photo" class="profile-photo">
       <h1>SANAKA DEEPIKA</h1>
-      <p>Student | Computer Science| Learner  </p>
+      <p>Student | Computer Science | Learner</p>
     </div>
   </header>
 
@@ -68,13 +164,13 @@
 
   <section id="about" class="section">
     <h2>About Me</h2>
-    <p>I'm a passionate engineering student currently pursuing my degree in CSM at VVIT. I enjoy learning new technologies, building creative projects, and solving real-world problems using engineering principles.I am always eager to explore innovative technologies and apply them to practical solutions.</p>
+    <p>I'm a passionate engineering student currently pursuing my degree in CSM at VVIT. I enjoy learning new technologies, building creative projects, and solving real-world problems using engineering principles. I am always eager to explore innovative technologies and apply them to practical solutions.</p>
   </section>
 
   <section id="education" class="section">
     <h2>Education</h2>
     <ul>
-      <li>B.Tech in CSE-Artificial Intelligence and Machine Learning(CSM) - Vasireddy Venkatadri Institute of Technology - 2023 - 2025(present)</li>
+      <li>B.Tech in CSE-Artificial Intelligence and Machine Learning (CSM) - Vasireddy Venkatadri Institute of Technology - 2023 - Present</li>
       <li>Intermediate (MPC) - Sri Chaitanya Junior College - 2021 - 2023</li>
       <li>SSC - Ramakrishna Mission High School - 2020 - 2021</li>
     </ul>
@@ -83,20 +179,21 @@
   <section id="skills" class="section">
     <h2>Skills</h2>
     <ul class="skills-list">
-      <li> C language</li>
+      <li>C Language</li>
       <li>Basic Java</li>
       <li>Python</li>
       <li>HTML</li>
-      <li>Java Script</li>
+      <li>JavaScript</li>
     </ul>
   </section>
 
   <section id="projects" class="section">
     <h2>Projects</h2>
     <ul>
-      <li><strong>Finger Counting using hand tracking :</strong> This project is a Python based project which is done by using opencv,numpy and some other modules.In this project we can track the hand by using opencv and count the finger with showing difference in the hand to hand.</li><li>currently working on web development<br>
-<a href="https://colab.research.google.com/drive/1Z0VlAwNxDxUYObD574qDsLZB3J_1MFmT#scrollTo=nt3aAfE-MuiW" target="_blank">**ML programs</a>
-</li>
+      <li><strong>Finger Counting using Hand Tracking:</strong> A Python project using OpenCV and NumPy to track hand movement and count fingers dynamically.</li>
+      <li><strong>ML Programs:</strong> Currently working on various web development and ML programs. <br>
+        <a href="https://colab.research.google.com/drive/1Z0VlAwNxDxUYObD574qDsLZB3J_1MFmT#scrollTo=nt3aAfE-MuiW" target="_blank">View on Google Colab</a>
+      </li>
       <li><strong>Portfolio Website:</strong> A personal portfolio to showcase my academic and personal projects using HTML, CSS, and JavaScript.</li>
     </ul>
   </section>
@@ -117,11 +214,12 @@
 
   <section id="contact" class="section">
     <h2>Contact</h2>
-    <p>Email: sanakadeepika@gmail.com</p>
-    <p>Phone: +91-9505180359</p>
-    </section>
+    <p>Email: <a href="mailto:sanakadeepika@gmail.com">sanakadeepika@gmail.com</a></p>
+    <p>Phone: <a href="tel:+919505180359">+91-9505180359</a></p>
+  </section>
 
   <footer class="footer">
+    <p>© 2025 SANAKA DEEPIKA | All rights reserved</p>
   </footer>
 
   <script>
